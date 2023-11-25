@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Wizards Academy - Tutors</title>
+<link rel="stylesheet" href="unifiedStyle.css">
+<script src="theme.js"> </script>
+<style>
+.main{
+    background-image: linear-gradient(360deg, hsla(196, 70%, 75%, 1) 0%, hsla(0, 0%, 97%, 1) 48%);
+    padding-top: 1.5vw;
+    padding-left: 3vw; 
+ }
+body.dark-mode .main{
+ background-image: linear-gradient(360deg, hsla(217, 65%, 32%, 1) 0%, hsla(219, 65%, 14%, 1) 48%);
+ color: #f7f7f7;
+    }
+
+body.dark-mode .image-box{
+     background-color: #191919;
+    }
+
+.media-scroller {
+  display: flex;
+  overflow-x: auto;
+  gap: 3vw;
+  padding: 2vw;
+  border: 0.1vw solid #ccc;
+}
+
+.image-container {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.image-box {
+  flex: 0 0 auto;
+  box-shadow: 0 0.396vw 1.979vw rgba(1 1 1 / 15%);
+  gap: 3vw;
+  text-align: center;
+  padding-top: 4vw;
+  margin-right: 1vw;
+  width: 30vw;
+  height: auto;
+  box-sizing: border-box;
+  border-radius: 1.65vw;
+  background-color: #fff;
+}
+
+.image-box img {
+  display: block;
+  width: 40%;
+  height: auto;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2vw;
+  margin-top: 2vw;
+}
+
+.image-box h1 {
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+  font-size: 2.5vw;
+}
+
+.image-caption {
+  margin-top: 0.8vw;
+  font-style: italic;
+  text-align: left;
+  padding-left: 3vw;
+  padding-bottom: 1vw;
+  margin-left: 1vw;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.image-caption li {
+  padding-left: 3vw;
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 2.5vw 2.5vw;
+  padding: 1vw 0.2vw 1vw 4vw;
+  margin-top: 2vw;
+}
+
+.image-caption li.java {
+  background-image: url(images/Java.png);
+  margin-top: 2vw;
+  margin-left: 1vw;
+}
+
+.image-caption li.python {
+  background-image: url(images/python.png);
+  margin-top: 2vw;
+  margin-left: 1vw;
+}
+
+.image-caption li.ux {
+  background-image: url(images/uxui.png);
+  margin-top: 2vw;
+  margin-left: 1vw;
+}
+
+.image-caption li.html {
+  background-image: url(images/html.png);
+  margin-top: 2vw;
+  margin-left: 1vw;
+}
+
+.image-caption li.coding {
+  background-image: url(images/coding.png);
+  margin-top: 2vw;
+  margin-left: 1vw;
+}
+
+.image-caption li.c_plus {
+  background-image: url(images/Cplus.png);
+  margin-top: 2vw;
+  margin-left: 1vw;
+}
+
+.image-caption li.c_sharp {
+  background-image: url(images/Csharp.png);
+  margin-top: 2vw;
+  margin-left: 1vw;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+  main {
+    padding: 2vw;
+  }
+
+  .image-box {
+    width: 80vw;
+    padding-top: 6vw;
+    padding-bottom: 4vw;
+    border-radius: 3vw;
+  }
+
+  .image-box img {
+    width: 50%;
+    margin-bottom: 3vw;
+    margin-top: 3vw;
+  }
+
+  .image-box h1 {
+    font-size: 4vw;
+  }
+
+  .image-caption li {
+    padding-left: 6vw;
+    background-size: 4vw 4vw;
+    padding: 2vw 0.4vw 2vw 8vw;
+    margin-top: 4vw;
+  }
+}
+
+</style>
+</head>
+
+
+
+<header>
+
+<nav class= "navbar">
+
+<div class="logo"> 
+<a href="index.html" class="image-element" ><img src="images/wizardslogo.png" alt="logo of Wizards academy website" >Wizards Academy</a>
+</div>
+<ul class= "navLinks">
+<li><a href= "index.html" accesskey="h" class="inner-element" >Home</a></li>
+<li><a href= "Parents.html" accesskey="p" class="inner-element">Parents</a></li>
+<li><a href= "Administrator.html" accesskey="a" class="inner-element">Administrator</a></li>
+<li><a href= "Tutors.html" accesskey="t" class="inner-element">Tutors </a></li>
+<li><a href= "Courses.html" accesskey="c" class="inner-element">Courses</a></li>
+</ul>
+</nav>
+
+<div class="Headerbackground">
+<h1>Tutors</h1>
+<hr class="header-line">
+<ul class="breadcrumb">
+<li class="breadcrumb-item"> <a href="index.html" class="breadcrumb-link" > Home</a></li>
+<li class="breadcrumb-item"> Tutors</li>
+</ul>
+</div>
+
+</header>
+
+<main class="main">
+<br>
+<body>
+<label for="sort-select">Sort:</label>
+  <select id="sort-select">
+    <option value="asc">A-Z</option>
+    <option value="desc">Z-A</option>
+  </select>
+<script>
+    function sortTutors() {
+      const selectElement = document.getElementById("sort-select");
+      const selectedValue = selectElement.value;
+
+      const imageContainer = document.querySelector(".image-container");
+      const imageBoxes = Array.from(imageContainer.getElementsByClassName("image-box"));
+
+      imageBoxes.sort((a, b) => {
+        const nameA = a.querySelector("h2").textContent.toUpperCase();
+        const nameB = b.querySelector("h2").textContent.toUpperCase();
+
+        if (selectedValue === "asc") {
+          if (nameA < nameB) return -1;
+          if (nameA > nameB) return 1;
+        } else {
+          if (nameA < nameB) return 1;
+          if (nameA > nameB) return -1;
+        }
+        return 0;
+      });
+
+      for (let box of imageBoxes) {
+        imageContainer.appendChild(box);
+      }
+    }
+
+    const sortSelect = document.getElementById("sort-select");
+    sortSelect.addEventListener("change", sortTutors);
+  </script>
+
+<div class="media-scroller"> 
+
+<div class="image-container">
+  
+<div class="image-box">
+<img src="images/tutor1.png" alt="Nick Miller">
+<h2>Nick Miller</h2>
+<ul class="image-caption">
+<li class="java">Java for beginners</li>
+<li class="python">Python for beginners</li>
+</ul>
+</div>
+	
+<div class="image-box">
+<img src="images/tutor2.png" alt="Jassica Day">
+<h2>Jassica Day</h2>
+<ul class="image-caption">
+<li class="ux">UX/UI</li>
+<li class="html">HTML</li>
+</ul>
+</div>
+	
+<div class="image-box">
+<img src="images/tutor2.png" alt="Sara Khalid">
+<h2>Sara Khalid</h2>
+<ul class="image-caption">
+<li class="coding">Fundamentals of coding</li>
+<li class="c_plus">Fundamentals of C++</li>
+</ul>
+</div>
+	
+<div class="image-box">
+<img src="images/tutor1.png" alt="Jack Smith">
+<h2>Jack Smith</h2>
+<ul class="image-caption">
+<li class="c_sharp">Fundamentals of C#</li>
+</ul>
+</div>
+	
+</div>
+
+</div>
+
+</main>
+
+<footer class="footer">
+
+  <pre>&copy; 2023 Wizards Academy    Wizardsacademy@gmail.com.</pre>
+  <div class="icons"> 
+  <a href="#"><i class="fa fa-facebook-official"></i></a>
+  <a href="#"><i class="fa fa-twitter"></i></a>
+  <a href="#"><i class="fa fa-instagram"></i></a>
+  <a href="#"><i class="fa fa-google"></i></a>
+  </div>
+ 
+</footer>
+
+</body>
+
+</html>
