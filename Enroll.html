@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+    <meta charset="utf-8">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Wizards Academy - Enroll in a course </title>
+	<link rel="stylesheet" href="unifiedStyle.css">
+    <script src="theme.js"> </script>
+    <style>
+
+        .Enroll-form{
+        box-shadow: 0 0.396vw 1.979vw rgba(1 1 1 / 15%);
+	    border-radius: 1.65vw;
+        width: 50vw;
+        height: auto;
+	    margin-left:5vw;
+	    padding-left:1.2vw;
+	    background-color: #fff;
+        font-family: 'Playpen Sans', cursive;
+        }
+        h2 {
+            font-weight: bold;
+			padding-top: 3vw;
+	        padding-bottom: 2vw;
+	        font-size: 1.7vw;
+        }
+
+        .select{
+    width: 15vw;
+    height: 2vw;
+    background: var(--arrow-icon) no-repeat right 0.8em center / 1.4em,
+    linear-gradient(to left, var(--arrow-bg) 3em, var(--select-bg) 3em);
+    border-radius: 0.25em;
+    cursor: pointer;
+}
+
+body.dark-mode .select{
+	    color: #f7f7f7;
+}
+
+option {
+    color: black;
+    background-color: var(--option-bg);
+}
+
+        
+        #intro{
+            padding: 2vw 14vw 4vw 4.5vw;
+	        font-size: 1.5vw;
+			font-family: 'Playpen Sans', cursive;
+        }
+
+        .custom-checkbox {
+            display: flex;
+            align-items: center;
+            margin: 3vw;
+        }
+
+        .custom-checkbox label {
+            font-size: 18px;
+            margin-left: 10px; 
+            font-family: cursive;
+            padding-left: 10px;
+            
+        }
+
+        .custom-checkbox input {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px; 
+            
+        }
+
+        img.checkbox-image {
+            width: 50px; 
+            height: 50px; 
+        }
+       
+
+        
+    .centered-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           
+    }
+    Button{ 
+        height: 3vw;
+	    width: 9vw;
+	    font-size: 1.3vw;
+		font-weight: bold;
+        color: black;
+		margin-top: 2vw;
+		margin-bottom: 2vw;
+        
+
+    }
+	.main{
+            background-image: linear-gradient(360deg, hsla(196, 70%, 75%, 1) 0%, hsla(0, 0%, 97%, 1) 48%);
+			padding-bottom: 4vw;
+            
+	}
+    body.dark-mode .main{
+        background-image: linear-gradient(360deg, hsla(217, 65%, 32%, 1) 0%, hsla(219, 65%, 14%, 1) 48%);
+        color: #f7f7f7;
+    }
+
+body.dark-mode .Enroll-form{
+    background-color: #131B29;
+        }
+         
+        
+        body.dark-mode .select{color: #f7f7f7;
+        }
+       
+
+                
+    
+    
+    
+    </style>
+</head>
+<body>
+<header>
+    <nav class= "navbar">
+
+        <div class="logo"> 
+        <a href="index.html" class="image-element" ><img src="images/wizardslogo.png" alt="logo of Wizards academy website" >Wizards Academy</a>
+        </div>
+        <ul class= "navLinks">
+        <li><a href= "index.html" accesskey="h" class="inner-element" >Home</a></li>
+        <li><a href= "Parents.html" accesskey="p" class="inner-element">Parents</a></li>
+        <li><a href= "Administrator.html" accesskey="a" class="inner-element">Administrator</a></li>
+        <li><a href= "Tutors.html" accesskey="t" class="inner-element">Tutors </a></li>
+        <li><a href= "Courses.html" accesskey="c" class="inner-element">Courses</a></li>
+        </ul>
+        </nav>
+        
+
+
+<div class="Headerbackground">
+<h1>Enroll in a course </h1>
+<hr class="header-line">
+<ul class="breadcrumb">
+         <li class="breadcrumb-item"> <a href="index.html" class="breadcrumb-link" > Home     </a></li>
+         <li class="breadcrumb-item"> <a href="Parents.html" class="breadcrumb-link" > Parents </a></li>
+         <li class="breadcrumb-item"> Enroll in a course</li>
+</ul>
+</div>
+</header>
+
+<main class="main">
+    <p id="intro">Enroll your child at Wizard Academy and let them uncover the secrets of coding. We're excited to welcome your little wizard to our magical world of programming.</p>
+    <form class="Enroll-form">
+    
+    <h2>Select the kid you want to enroll:</h2>
+    <select id="kids" name="kids" class="select">
+        <option value="">Select</option>
+        
+    </select>
+     
+    <h2>Choose the courses you want to enroll your kid in:</h2>
+    <select id="prerequisites" name="prerequisites" class="select">
+      <option value="">filter by prerequisites</option>
+    </select>
+     <img src="images/filter.png" alt="" width="20" height="20">
+
+  
+    <select id="tutors" name="tutors" class="select">
+      <option value="">filter by tutors</option>
+    </select>
+    <img src="images/filter.png" alt="" width="20" height="20">
+
+    <div class="custom-checkbox" tutor="Ms. jessica Day" prerequisite= "Basic understanding of programming concepts and logic">
+        <input type="checkbox" id="Java for beginners" name="agree" value="Java for beginners">
+        <img class="checkbox-image" src="images/java.png" alt="Java for beginners">
+        <label for="Java for beginners">Java for beginners</label>
+        
+    </div>
+
+    <div class="custom-checkbox" tutor= "Mr. jack smith" prerequisite="Familiarity with web browsing" >
+        <input type="checkbox" id="HTML" name="agree" value="HTML" >
+         <img class="checkbox-image" src="images/html.png" alt="Checkmark">
+        <label for="HTML">HTML</label>
+       
+    </div>
+    <div class="custom-checkbox"  tutor="Ms. sara khalid" prerequisite= "Basic understanding of programming concepts and logic" >
+        <input type="checkbox" id="python for beginners" name="agree" value="python for beginners">
+           <img class="checkbox-image" src="images/python.png" alt="Checkmark" >
+           <label for="python for beginners">Python for beginners</label>
+     
+    </div>
+    <div class="custom-checkbox" tutor= "Mr. David schmidt" prerequisite="Basic understanding of computer programming concepts" >
+        <input type="checkbox" id="UX/UI" name="agree" value="UX/UI" >
+           <img class="checkbox-image" src="images/uxui.png" alt="UX/UI" >
+           <label for="UX/UI">UX/UI</label>
+     
+    </div>
+    <div class="custom-checkbox" tutor="Mr. Nick miller" prerequisite="Familiarity with web browsing">
+        <input type="checkbox" id="intro" name="agree" value="Fundamentals of coding" >
+           <img class="checkbox-image" src="images/coding.png" alt="Fundamentals of coding" >
+           <label for="intro">Fundamentals of coding</label>
+     
+    </div>
+    <div class="custom-checkbox" tutor= "Mr. Mel Monroe" prerequisite="Basic understanding of programming concepts and logic">
+        <input type="checkbox" id="Fundamentals of C++" name="agree" value="Fundamentals of C++" >
+           <img class="checkbox-image" src="images/Cplus.png" alt="C++" >
+           <label for="Fundamentals of C++">Fundamentals of C++ </label>
+     
+    </div>
+
+<div class="centered-button">
+    <div class="Button">
+        <button >Submit</button>
+    </div>
+</div>
+
+</form>
+</main>
+  
+<footer class="footer">
+
+    <pre>&copy; 2023 Wizards Academy    Wizardsacademy@gmail.com.</pre>
+    <div class="icons"> 
+    <a href="#"><i class="fa fa-facebook-official"></i></a>
+    <a href="#"><i class="fa fa-twitter"></i></a>
+    <a href="#"><i class="fa fa-instagram"></i></a>
+    <a href="#"><i class="fa fa-google"></i></a>
+    </div>
+   
+  </footer>
+    
+<script>
+   
+    document.addEventListener("DOMContentLoaded", function () {
+    
+
+
+      
+
+  
+    
+    // Retrieve the names from local storage and convert them back to an array
+    
+
+        // Create a multidimensional array for courses with tutors and prerequisites
+        var courses = [
+            { name: "Java for beginners", tutor: "Ms. jessica Day", prerequisite: "Basic understanding of programming concepts and logic"  },
+            { name: "HTML", tutor: "Mr. jack smith", prerequisite: "Familiarity with web browsing"  },
+            { name: "python for beginners", tutor: "Ms. sara khalid", prerequisite: "Basic understanding of programming concepts and logic" },
+            { name: "CSS", tutor: "Ms. sara khalid", prerequisite: "HTML" },
+            { name: "JavaScript", tutor: "Mr. jack smith", prerequisite: "Basic understanding of programming concepts and logic" },
+            { name: "UX/UI", tutor: "Mr. David schmidt", prerequisite: "Basic understanding of computer programming concepts" },
+            { name: "Fundamentals of coding", tutor:"Mr. Nick miller", prerequisite: "Familiarity with web browsing" },
+            { name: "Fundamentals of C++", tutor: "Mr. Mel Monroe", prerequisite: "Basic understanding of programming concepts and logic" },
+            { name: "Graphic Design", tutor: "Mr. Mel Monroe", prerequisite: "Basic understanding of design principles, visual aesthetics, and human behavior" }
+        ];
+
+        function populateKidsDropdown() {
+      var kidsDropdown = document.getElementById('kids');
+      var kids = JSON.parse(localStorage.getItem('ChildRecords'));
+
+      kids?.forEach(function (kid) {
+        var option = document.createElement('option');
+        option.value = kid.Name;
+        option.textContent = kid.Name;
+        kidsDropdown.appendChild(option);
+      });
+    }
+    
+    populateKidsDropdown();
+            fillFilterOptions("prerequisites", getUniquePrerequisites(courses));
+            fillFilterOptions("tutors", getUniqueTutors(courses));
+
+            document.getElementById("tutors").addEventListener("change", filterCourses);
+            document.getElementById("prerequisites").addEventListener("change", filterCourses);
+            document.querySelector("form").addEventListener("submit", handleFormSubmit);
+
+            filterCourses(); // Initial course filtering based on selected tutor or prerequisite
+
+            function fillFilterOptions(selectId, options) {
+                // Function to fill filter options
+                var select = document.getElementById(selectId);
+                options.forEach(function (option) {
+                    var optionElement = document.createElement("option");
+                    optionElement.value = option;
+                    optionElement.textContent = option;
+                    select.appendChild(optionElement);
+                });
+            }
+
+            function getUniquePrerequisites(courses) {
+                // Function to get unique prerequisites from courses array
+                var prerequisites = courses.map(course => course.prerequisite);
+                return Array.from(new Set(prerequisites.filter(Boolean)));
+            }
+
+            function getUniqueTutors(courses) {
+                // Function to get unique tutors from courses array
+                var tutors = courses.map(course => course.tutor);
+                return Array.from(new Set(tutors));
+            }
+
+            
+
+
+      
+    function filterCourses() {
+    var tutorFilter = document.getElementById("tutors");
+    var selectedTutor = tutorFilter.value;
+
+    var prerequisitesFilter = document.getElementById("prerequisites");
+    var selectedPrerequisite = prerequisitesFilter.value;
+
+    var courseCards = document.getElementsByClassName("custom-checkbox");
+
+    for (var i = 0; i < courseCards.length; i++) {
+        var courseCard = courseCards[i];
+        var tutor = courseCard.getAttribute("tutor");
+        var prerequisites = courseCard.getAttribute("prerequisite");
+
+        var tutorMatch = selectedTutor === "" || tutor === selectedTutor;
+        var prerequisiteMatch = selectedPrerequisite === "" || prerequisites===selectedPrerequisite;
+
+        if (tutorMatch && prerequisiteMatch) {
+            courseCard.style.display = "block"; // Show the course card
+        } else {
+            courseCard.style.display = "none"; // Hide the course card
+        }
+    }
+}      
+
+    
+    
+            function handleFormSubmit(event) {
+                // Submit button click event
+                event.preventDefault(); // Prevent the default form submission behavior
+
+                // Check if a child is selected
+                var selectedChild = document.getElementById("kids").value;
+                if (!selectedChild) {
+                    alert("Please select a child.");
+                    return;
+                }
+
+                // Check if at least one course is selected
+                var selectedCourses = Array.from(document.querySelectorAll(".custom-checkbox input:checked")).map(function (checkbox) {
+                    return checkbox.getAttribute('value');
+                });
+
+                if (selectedCourses.length === 0) {
+                    alert("Please select at least one course.");
+                    return;
+                }
+
+                
+                // Display information on the page
+                var infoContainer = document.createElement("div");
+                infoContainer.className = "enrollment-info";
+                infoContainer.innerHTML = "<h3>Enrollment Information</h3>" +
+                    "<p>Child: " + selectedChild + "</p>" +
+                    "<p>Courses:</p><ul>" + selectedCourses.map(course => "<li>" + course + "</li>").join("") + "</ul>";
+
+                // Clear previous information and display new information
+                var previousInfo = document.querySelector(".enrollment-info");
+                if (previousInfo) {
+                    previousInfo.remove();
+                }
+               
+
+                document.querySelector("main").appendChild(infoContainer);
+
+                // Clear the form
+                document.querySelector("form").reset();
+            }
+            
+        });
+</script>
+       
+    
+</body>
+</html>
