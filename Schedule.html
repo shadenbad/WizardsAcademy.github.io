@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Wizards Academy - Schedule</title>
+<link rel="stylesheet" href="unifiedStyle.css">
+<script src="theme.js"> </script>
+<style>
+.main{
+    background-image: linear-gradient(360deg, hsla(196, 70%, 75%, 1) 0%, hsla(0, 0%, 97%, 1) 48%);
+    padding-top: 1.5vw;
+padding-bottom: 4vw;
+    padding-left: 3vw;
+  }
+ body.dark-mode .main{
+ background-image: linear-gradient(360deg, hsla(217, 65%, 32%, 1) 0%, hsla(219, 65%, 14%, 1) 48%);
+ color: #f7f7f7;
+    }
+
+body.dark-mode .schedule{
+    background-color: #D3BEBE;
+    border: 0.08vw solid #B8868C;
+    }
+
+body.dark-mode .schedule th{
+    background-color: #D3BEBE;
+     border: 0.08vw solid #B8868C;
+    }
+
+ body.dark-mode .schedule td {
+    border: 0.08vw solid #B8868C;
+    }
+
+.schedule {
+  width: 97%;
+  height: auto;
+  border-collapse: collapse;
+  background-color: #FDF0F0;
+}
+
+table caption {
+  font-weight: bold;
+  font-size: 1.6vw;
+  text-align: left;
+  padding-top: 4.5vw;
+  padding-bottom: 1.5vw;
+}
+
+th {
+  background-color: #FDF0F0;
+  text-align: center;
+  padding: 1.6vw;
+  border: 0.08vw solid #F1B4BB;
+}
+
+td {
+  border: 0.08vw solid #F1B4BB;
+  padding: 1.6vw;
+  text-align: center;
+}
+
+.schedule th:nth-last-child(-n+2),
+.schedule td:nth-last-child(-n+2) {
+  background-color: #d1d1d1;
+}
+
+.schedule tbody tr:last-child td:not(:first-child) {
+  background-color: #d1d1d1;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+  main {
+    padding: 2vw;
+  }
+
+  table caption {
+    font-size: 2.5vw;
+    padding-top: 3vw;
+    padding-bottom: 1vw;
+  }
+
+  th,
+  td {
+    padding: 1.5vw;
+    font-size: 2vw;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  table caption {
+    font-size: 2vw;
+    padding-top: 2.5vw;
+    padding-bottom: 0.5vw;
+  }
+
+  th,
+  td {
+    padding: 1vw;
+    font-size: 1.5vw;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<nav class= "navbar">
+
+<div class="logo"> 
+<a href="index.html" class="image-element" ><img src="images/wizardslogo.png" alt="logo of Wizards academy website" >Wizards Academy</a>
+</div>
+<ul class= "navLinks">
+<li><a href= "index.html" accesskey="h" class="inner-element" >Home</a></li>
+<li><a href= "Parents.html" accesskey="p" class="inner-element">Parents</a></li>
+<li><a href= "Administrator.html" accesskey="a" class="inner-element">Administrator</a></li>
+<li><a href= "Tutors.html" accesskey="t" class="inner-element">Tutors </a></li>
+<li><a href= "Courses.html" accesskey="c" class="inner-element">Courses</a></li>
+</ul>
+</nav>
+
+
+<div class="Headerbackground">
+<h1> Schedule</h1>
+<hr class="header-line">
+<ul class="breadcrumb">
+<li class="breadcrumb-item"> <a href="index.html" class="breadcrumb-link" > Home </a></li>
+<li class="breadcrumb-item"> <a href="Administrator.html" class="breadcrumb-link" > Administrator </a></li>
+<li class="breadcrumb-item"> Schedule</li>
+</ul>
+</div>
+
+</header>
+
+<main class="main" >
+
+<table class="schedule">
+<caption> Nick Miller schedule </caption> 
+
+<thead>
+<tr> 
+<th>  </th>
+<th>  </th>
+<th> Sunday </th>
+<th> Monday </th> 
+<th> Tuesday </th> 
+<th> Wednesday </th> 
+<th> thursday </th>
+<th> Friday </th> 
+<th> Saturday</th>
+</tr>
+
+</thead>
+
+<tbody> 
+
+<tr> 
+<td rowspan="5"> Nick Miller</td>
+<td> 3:00-4:00 </td> 
+<td colspan="3" rowspan="2"> Java for beginners </td> 
+<td>  </td> 
+<td> </td> 
+<td>  </td> 
+<td>  </td>
+</tr>
+
+<tr> 
+<td > 4:00-5:00 </td>
+<td> </td>
+<td>  </td> 
+<td> </td> 
+<td>  </td> 
+</tr>
+
+<tr> 
+<td> 5:00-6:00 </td>
+<td>  </td> 
+<td>  </td>
+<td>  </td>
+<td colspan="2" rowspan="2"> Python for beginners </td>  
+<td>   </td>
+<td>  </td>
+</tr>
+
+<tr> 
+<td> 6:00-7:00 </td>
+<td>  </td> 
+<td>  </td>
+<td>  </td>
+<td > </td>  
+<td>  </td>
+</tr>
+
+<tr> 
+<td> 7:00-8:00 </td>
+<td>  </td> 
+<td>  </td>
+<td>  </td>
+<td>  </td>  
+<td>   </td>
+<td>  </td>
+<td>  </td>
+</tr>
+</tbody> 
+    
+</table>
+	
+
+ </main>
+ 
+<footer class="footer">
+
+  <pre>&copy; 2023 Wizards Academy    Wizardsacademy@gmail.com.</pre>
+  <div class="icons"> 
+  <a href="#"><i class="fa fa-facebook-official"></i></a>
+  <a href="#"><i class="fa fa-twitter"></i></a>
+  <a href="#"><i class="fa fa-instagram"></i></a>
+  <a href="#"><i class="fa fa-google"></i></a>
+  </div>
+ 
+</footer>
+
+ </body>
+
+</html>
