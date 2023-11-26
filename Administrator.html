@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Wizards Academy - Administrator dashboard</title>
+    <link rel="stylesheet" href="unifiedStyle.css">
+    <script src="theme.js"> </script>
+    <style>
+        .card {
+            width: 25vw;
+            height: auto;
+            background-image: radial-gradient(circle, hsla(179, 100%, 89%, 1) 0%, hsla(180, 100%, 97%, 1) 78%);
+            margin: 1vw;
+            border: 0.01vw solid #93D4EC;
+            border-radius: 1.65vw;
+            box-shadow: 1vw 1vw #B5FDFB;
+            text-align: left;
+        }
+		body.dark-mode .card{
+	    background-image: radial-gradient(circle, hsla(219, 65%, 14%, 1) 0%, hsla(206, 70%, 30%, 1) 78%);
+	    color: #f7f7f7;
+        border: 0.01vw solid #0C1C39;
+	    box-shadow: 1vw 1vw #163C69;
+        } 
+
+        .container {
+            padding-top: 2vw;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .container h2 {
+            font-family: 'Playpen Sans', cursive;
+            text-align: center;
+            font-size: 1.8vw;
+            padding: 0.7vw 0.2vw;
+        }
+
+        .container ul li {
+            list-style-type: none;
+            font-family: cursive;
+            padding: 2% 0% 2% 6%;
+        }
+
+        .main{
+            background-image: linear-gradient(360deg, hsla(196, 70%, 75%, 1) 0%, hsla(0, 0%, 97%, 1) 48%);
+			padding-bottom: 4vw;    
+
+}
+           body.dark-mode .main{
+                 background-image: linear-gradient(360deg, hsla(217, 65%, 32%, 1) 0%, hsla(219, 65%, 14%, 1) 48%);color: #f7f7f7;
+    }
+    
+
+
+
+        .More {
+            display: flex;
+            justify-content: right;
+            padding-right: 2vw;
+        }
+        .admin-line{
+            border: none;
+            height: 0.01vw;
+           background: #93D4EC;
+       }
+         body.dark-mode .admin-line{
+    background: #0C1C39;}
+
+
+
+        .card-list a:link {
+            color: #077FAA;
+        }
+        .showMore{
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+       
+<nav class= "navbar">
+
+    <div class="logo"> 
+    <a href="index.html" class="image-element" ><img src="images/wizardslogo.png" alt="logo of Wizards academy website" >Wizards Academy</a>
+    </div>
+    <ul class= "navLinks">
+    <li><a href= "index.html" accesskey="h" class="inner-element" >Home</a></li>
+    <li><a href= "Parents.html" accesskey="p" class="inner-element">Parents</a></li>
+    <li><a href= "Administrator.html" accesskey="a" class="inner-element">Administrator</a></li>
+    <li><a href= "Tutors.html" accesskey="t" class="inner-element">Tutors </a></li>
+    <li><a href= "Courses.html" accesskey="c" class="inner-element">Courses</a></li>
+    </ul>
+    </nav>
+    
+
+        <div class="Headerbackground">
+            <h1>Admin</h1> <h1 id="currentWeekStartDate"></h1>
+            <hr class="header-line">
+            <ul class="breadcrumb">
+                <li class="breadcrumb-item"> <a href="index.html" class="breadcrumb-link">Home</a></li>
+                <li class="breadcrumb-item"> Administrator </li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="card">
+                <h2>Kids Registered</h2>
+                <hr class="admin-line">
+                <ul>
+                    <!-- Kids Registered list -->
+                    <li>Faisal R. Alsheddi</li>
+                    <li>Noura K. Alfrayyan</li>
+                    <li>Noura K. Alrasheed</li>
+                    <li>Zaid M. Alhussain</li>
+                    <li>Faris M. Alhussain</li>
+                    <li>Mona M. Alhussain</li>
+                    <li>Nora R. Alsheddi</li>
+                    <li>Faris M. Alsaad</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Courses</h2>
+                <hr>
+                <ul class="course">
+                    <!-- Courses list -->
+                    <li >
+                        Java for beginners (Instructor: Ms. jessica Day)
+                        <h4>Kids Registered</h4>
+                        <ul>
+                            <li>Faris M. Alhussain</li>
+                            <li>Zaid M. Alhussain</li>
+                            <li>Noura K. Alfrayyan</li>
+                            <span class="showMore" id="list1">
+                            <li>Mona M. Alhussain</li>
+                            <li>Nora M. Alsheddi</li></span>
+                            <div class="More"><button onclick="hideshow1()">More..</button></div>
+                        </ul>
+                    </li>
+                    <li >
+                        HTML (Instructor: Mr.jack Smith)
+                        <h4>Kids Registered</h4>
+                        <ul style="font-size: medium; list-style:none; list-style-position: inside;">
+                            <li>mona M. Alhussain</li>
+                            <li>nora M. Alsheddi</li>
+                            <li>Faris M. Alsaad</li>
+                           <span class="showMore" id="list2"><li>Noura K. Alfrayyan</li>
+                            <li>Noura K. Alrasheed</li></span>
+                            <div class="More"><button onclick="hideshow2()">More..</button></div>
+                        </ul>
+                    </li>
+                    <li >
+                        C++ (Instructor: Mr.Mel Monroe)
+                        <h4>Kids Registered</h4>
+                        <ul style="font-size: medium; list-style:none; list-style-position: inside;">
+                            <li>mona M. Alhussain</li>
+                            <li>nora M. Alsheddi</li>
+                            <li>Faris M. Alsaad</li>
+                           <span class="showMore" id="list3" ><li>Noura K. Alfrayyan</li>
+                            <li>Noura K. Alrasheed</li></span>
+                            <div class="More"><button onclick="hideshow3()">More..</button></div>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Tutors</h2>
+                <hr>
+                <ul class="card-list">
+                    <!-- Tutors list -->
+                    <li>
+                        <a href="schedule2.html">Ms. jessica Day</a>
+                        <ul>
+                            <li>Java for Beginners</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="schedule2.html">Ms. sara khalid</a>
+                        <ul>
+                            <li>python for beginners</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="schedule.html">Mr. jack smith</a>
+                        <ul>
+                            <li>HTML</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="schedule.html">Mr. Nick miller</a>
+                        <ul>
+                            <li>Introduction to programming</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="schedule.html">Mr. David schmidt</a>
+                        <ul>
+                            <li>UX/UI</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="schedule.html">Mr. Mel Monroe</a>
+                        <ul>
+                            <li>C++</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+
+        <pre>&copy; 2023 Wizards Academy    Wizardsacademy@gmail.com.</pre>
+        <div class="icons"> 
+        <a href="#"><i class="fa fa-facebook-official"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+        <a href="#"><i class="fa fa-google"></i></a>
+        </div>
+       
+      </footer>
+      
+
+    <script>
+            
+
+            function getCurrentWeekStartDate() {
+    var currentDate = new Date();
+    var currentDay = currentDate.getDay(); // Sunday is 0, Monday is 1, ..., Saturday is 6
+
+    // Calculate the difference between the current day and Sunday
+    var difference = currentDay - 0; // 0 represents Sunday
+
+    // Subtract the difference to get the start date of the current week
+    var currentWeekStartDate = new Date(currentDate);
+    currentWeekStartDate.setDate(currentDate.getDate() - difference);
+
+    return currentWeekStartDate;
+}
+
+function formatDateString(date) {
+    var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    return date.toLocaleDateString('en-US', options);
+}
+
+// Display the current week's start date
+var currentWeekStartDate = getCurrentWeekStartDate();
+var formattedDateString = formatDateString(currentWeekStartDate);
+
+
+document.getElementById('currentWeekStartDate').innerText = formattedDateString;
+
+
+            // Attach click event listeners to 'More' buttons
+           var spans1 = document.getElementById('list1')
+    var display = 0;
+
+    function hideshow1() { 
+        
+            spans1.style.display = display === 1 ? 'block' : 'none';
+            display = 1 - display; // Toggle between 0 and 1
+        }
+
+        var spans2 = document.getElementById('list2')
+    var display = 0;
+
+    function hideshow2() { 
+        
+            spans2.style.display = display === 1 ? 'block' : 'none';
+            display = 1 - display; // Toggle between 0 and 1
+        }
+        
+        var spans3 = document.getElementById('list3')
+    var display = 0;
+
+    function hideshow3() { 
+        
+            spans3.style.display = display === 1 ? 'block' : 'none';
+            display = 1 - display; // Toggle between 0 and 1
+        }
+        
+
+
+              
+
+
+           
+           
+    </script>
+
+</body>
+
+</html>
