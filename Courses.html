@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<title>Wizards Academy - Courses</title>
+<link rel="stylesheet" href="unifiedStyle.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<script src="theme.js"> </script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif&family=Playpen+Sans:wght@400;700&family=Young+Serif&display=swap');
+  
+.container {
+  display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-around;
+      padding-top: 3%;
+      background-image: linear-gradient(360deg, hsla(196, 70%, 75%, 1) 0%, hsla(0, 0%, 97%, 1) 48%);
+	  padding-bottom: 4vw;
+    }
+body.dark-mode .container{
+	background-image: linear-gradient(360deg, hsla(217, 65%, 32%, 1) 0%, hsla(219, 65%, 14%, 1) 48%);
+	color: #f7f7f7;
+    }
+.course {
+      justify-content: space-between;
+    }
+
+.course-item {
+  list-style-type: none;
+  text-decoration: none;
+  width: 28vw;
+  overflow: hidden;
+  border: 1.5px solid #93D4EC;
+  border-radius: 1.65vw;
+  box-shadow: 1vw 1vw #B5FDFB;
+  color: black;
+  background-image: radial-gradient(circle, hsla(179, 100%, 89%, 1) 0%, hsla(180, 100%, 97%, 1) 78%);
+  padding: 2.8vw 1.2vw 0.8vw;
+  margin: 1.17vw;
+  display:inline-block;
+  font-size: 1.17vw;
+  font-family: 'Playpen Sans', cursive;
+  margin-left:2.7vw;
+}
+body.dark-mode .course-item{
+	background-image: radial-gradient(circle, hsla(219, 65%, 14%, 1) 0%, hsla(206, 70%, 30%, 1) 78%);
+	color: #f7f7f7;
+    border: 0.01vw solid #0C1C39;
+	box-shadow: 1vw 1vw #163C69;
+}
+.image img{	
+	width: 7vw;
+	display: block;
+    margin-left: 0;
+    margin-right: 0;
+	position: relative;
+	margin-top: 0.5vw;
+	margin-left: 9vw;
+
+}
+
+.course-item h2{
+	text-align:center;
+}
+
+
+ .stars{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size:2vw;
+
+}
+.checked {
+  color: orange;
+}
+ 
+.course-item .course-details {
+  display: none;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.course-item:hover .course-details {
+  display: list-item;
+  max-height: 100%;
+  transition: max-height 0.3s ease;
+  
+}
+
+.Course-tutor {
+  width: 18.7vw;
+  height: 3vw;
+  border-radius: 20px;
+  padding: 1vw;
+  margin: 0.7vw;
+  border: 0.18vw solid ;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+body.dark-mode .course-tutor{
+	color: #f7f7f7;
+    border: 0.18vw solid #f7f7f7;
+}
+
+.Course-tutor img {
+  width: 3.5vw;
+  height: 3.5vw;
+  padding-right: 1vw;
+  padding-left: 0vw;
+  padding-bottom: 0.4vw;
+  padding-top: 0.4vw;
+}
+
+.schedule {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.schedule img {
+  width: 2vw;
+  float: left;
+}
+
+.checked {
+  color: orange;
+}
+
+.prerequisites {
+  text-align: left;
+  list-style-type: disc;
+  padding-left: 1.8vw;
+}
+
+.objectives {
+  text-align: left;
+  list-style-type: disc;
+  padding-left: 1.8vw;
+}
+
+body{
+height: 100%;
+}
+</style>
+</head>
+
+<body>
+
+
+<header>
+<nav class= "navbar">
+<div class="logo"> 
+<a href="index.html" class="image-element" ><img src="images/wizardslogo.png" alt="logo of Wizards academy website" >Wizards Academy</a>
+</div>
+<ul class= "navLinks">
+<li><a href= "index.html" accesskey="h" class="inner-element" >Home</a></li>
+<li><a href= "Parents.html" accesskey="p" class="inner-element">Parents</a></li>
+<li><a href= "Administrator.html" accesskey="a" class="inner-element">Administrator</a></li>
+<li><a href= "Tutors.html" accesskey="t" class="inner-element">Tutors </a></li>
+<li><a href= "Courses.html" accesskey="c" class="inner-element">Courses</a></li>
+</ul>
+</nav>
+
+<div class="Headerbackground">
+<h1>Courses</h1>
+<hr class="header-line">
+<ul class="breadcrumb">
+         <li class="breadcrumb-item"> <a href="index.html" class="breadcrumb-link" > Home </a></li>
+         <li class="breadcrumb-item"> Courses </li>
+</ul>
+</div>
+
+
+</header>
+
+
+
+<main>
+
+<div class="container">
+
+<div class="course">
+  <div class="course-item">
+    <div class="image"><img src="images/java.png" alt="java"></div>
+    <h2>Java for beginners</h2>
+	<div class="stars">
+<span class="fa fa-star checked" ></span>
+<span class="fa fa-star checked" ></span>
+<span class="fa fa-star checked" ></span>
+<span class="fa fa-star checked" ></span>
+<span class="fa fa-star checked" ></span> </div>
+    <div class="course-details">
+      <p>Fundamentals of Java syntax, handling data, and solving issues by creating functions, loops, and conditional statements.</p>
+      <h3>Prerequisites:</h3>
+      <ul class="preqeisites">
+        <li>Basic understanding of programming concepts and logic.</li>
+        <li>Familiarity with any programming language</li>
+      </ul>
+      <h3>Tutor:</h3>
+      <p class="Course-tutor"><img src="images/tutor2.png" alt="Mrs."> Jessica Day</p>
+      <h3>Course objectives:</h3>
+      <ul class="objectives">
+        <li>Learn fundamentals of Java programming</li>
+        <li>Apply object-oriented programming (OOP) concepts</li>
+      </ul>
+      <div class="schedule">
+        <img src="images/clock.jpg" alt="Time:"><pre>3:00</pre>
+        <img src="images/day.jpg" alt="Days:"><pre>Sunday - Thursday</pre>
+      </div>
+    </div>
+  </div>
+
+<div class="course-item"> 
+<div class="image"><img src="images/python.png" alt="python" ></div>
+<h2>Python for beginners</h2>
+<div class="stars">
+<span class="fa fa-star checked" ></span>
+<span class="fa fa-star checked" ></span>
+<span class="fa fa-star checked" ></span>
+<span class="fa fa-star checked" ></span>
+<span class="fa fa-star checked" ></span> </div>
+<div class="course-details">
+<p>Fundamentals of Python, develop problem-solving skills, and explore data analysis and web development in a fun and interactive environment.</p>
+<h3> Prequesites: </h3>
+<ul class="prequesites">
+<li> Basic understanding of computer programming concepts</li>
+<li>Basic knowledge of computer science principles </li>
+</ul>
+<h3> Tutor: </h3>
+<p class="Course-tutor"> <img src="images/tutor2.png" alt="Mrs."> Sarah Khalid</p>
+<h3> Course objectives: </h3>
+<ul class="objectives">
+<li>Gain a solid understanding of Python fundamentals</li>
+<li>Explore the power of Python libraries and modules </li>
+<li>Develop problem-solving skills with Python </li>
+</ul>
+<br>
+<div class='schedule'> <img src= "images/clock.jpg" alt= 'Time:'> <pre> 5:00   </pre><img src= "images/day.jpg" alt= 'Days:'><pre> Wednesday - Thursday </pre> </div>
+</div>
+</div>
+
+<div class="course-item"> 
+<div class="image"><img src="images/coding.png" alt="coding" ></div>
+<h2>Fundamentals of coding</h2>
+<div class="stars">
+<span class="fa fa-star checked" ></span>
+<span class="fa fa-star checked" ></span>
+<span class="fa fa-star checked" ></span>
+<span class="fa fa-star checked" ></span>
+<span class="fa fa-star" ></span></div>
+<div class="course-details">
+<p>Introduction to programming concepts through interactive activities and projects. It fosters creativity and critical thinking.</p>
+<h3> Prequesites: </h3>
+<ul class="prequesites">
+<li>Basic computer literacy </li>
+<li>Logical Thinking </li>
+<li>Basic Math Skills </li>
+</ul>
+<h3> Tutor: </h3>
+<p class="Course-tutor"><img src="images/tutor1.png" alt="Mr."> Nick Miller</p>
+<h3> Course objectives: </h3>
+<ul class="objectives">
+<li>Develop logical thinking and algorithmic reasoning </li>
+<li>Learn foundational programming concepts </li>
+<li>Learn a programming language </li>
+<li>Gain problem-solving  </li>
+</ul>
+<br>
+<div class='schedule'> <img src= "images/clock.jpg" alt= 'Time:'> <pre>10:00 </pre><img src= "images/day.jpg" alt= 'Days:'><pre>  Saturday - Tuesday </pre> </div>
+</div></div>
+
+
+<div class="course-item"> 
+<div class="image"><img src="images/html.png" alt="HTML" ></div>
+<h2>HTML</h2>
+<div class="stars">
+<span class="fa fa-star checked" ></span>
+<span class="fa fa-star checked" ></span>
+<span class="fa fa-star checked" ></span>
+<span class="fa fa-star checked" ></span>
+<span class="fa fa-star" ></span></div>
+<div class="course-details">
+<p>HTML, or Hypertext Markup Language, is a standard markup language used for creating the structure and presentation of web pages, express creativity, while learning the language that motivates websites' structure and content.</p>
+<h3> Prequesites: </h3>
+<ul class="prequesites">
+<li>Basic computer literacy </li>
+<li>Familiarity with web browsing </li>
+</ul>
+<h3> Tutor: </h3>
+<p class="Course-tutor"><img src="images/tutor1.png" alt="Mr."> Jack Smith</p>
+<h3> Course objectives: </h3>
+<ul class="objectives">
+<li>Introduction to web forms </li>
+<li>Understand the structure and syntax of HTML</li>
+<li>Understand the Document Object Model (DOM)</li>
+<li>Build and style web pages</li>
+</ul>
+<br>
+<div class='schedule'> <img src= "images/clock.jpg" alt= 'Time:'> <pre> 6:00     </pre><img src= "images/day.jpg" alt= 'Days:'><pre> Saturday - Tuesday </pre> </div>
+</div></div>
+
+<div class="course-item"> 
+<div class="image"><img src="images/uxui.png" alt="UX/UI"></div>
+<h2>UX/UI</h2>
+<div class="stars">
+<span class="fa fa-star checked" ></span>
+<span class="fa fa-star checked" ></span>
+<span class="fa fa-star checked" ></span>
+<span class="fa fa-star checked" ></span>
+<span class="fa fa-star checked" ></span> </div>
+<div class="course-details">
+<p>Through practical exercises and interactive projects, this course teaches young learners to UX and UI design principles. To produce user-friendly, and visually appealing digital experiences, study wireframing, prototyping, etc.</p>
+<h3> Prequesites: </h3>
+<ul class="prequesites">
+<li>Basic understanding of design principles, visual aesthetics, and human behavior </li>
+<li>Familiarity with design principles </li>
+</ul>
+<h3> Tutor: </h3>
+<p class="Course-tutor"> <img src="images/tutor1.png" alt="Mr.">David Schmidt</p>
+<h3> Course objectives: </h3>
+<ul class="objectives">
+<li>Learn user research and analysis techniques </li>
+<li>Develop wireframing and prototyping skills </li>
+<li>Apply UX/UI design principles in projects </li>
+</ul>
+<br>
+<div class='schedule'> <img src= "images/clock.jpg" alt= 'Time:'> <pre> 4:00    </pre><img src= "images/day.jpg" alt= 'Days:'><pre> Saturday - Tuesday  </pre> </div>
+</div></div>
+
+
+<div class="course-item"> 
+<div class="image"> <img src="images/Cplus.png" alt="C++" ></div>
+<h2>Fundamentals of C++</h2>
+<div class="stars">
+<span class="fa fa-star checked" ></span>
+<span class="fa fa-star checked" ></span>
+<span class="fa fa-star checked" ></span>
+<span class="fa fa-star checked" ></span>
+<span class="fa fa-star checked" ></span> </div>
+<div class="course-details">
+<p>Introduction to the C++ programming language with an emphasis on important ideas such as variables, data types, and object-oriented programming.</p>
+<h3> Prequesites: </h3>
+<ul class="prequesites">
+<li>Basic programming concepts </li>
+<li>Understanding of basic mathematics  </li>
+<li>Basic knowledge of computer systems </li>
+</ul>
+<h3> Tutor: </h3>
+<p class="Course-tutor"><img src="images/tutor2.png" alt="Mrs.">Mel Monroe</p>
+<h3> Course objectives: </h3>
+<ul class="objectives">
+<li>Learn the syntax and fundamental concepts of C++ </li>
+<li>Understand object-oriented programming (OOP) principles </li>
+<li>Develop problem-solving and coding skills </li>
+<li>Understand the principles of C++ programming </li>
+</ul>
+<br>
+<div class='schedule'> <img src= "images/clock.jpg" alt= 'Time:'><pre>8:00  </pre><img src= "images/day.jpg" alt= 'Days:'><pre>Wednesday </pre> </div>
+</div></div>
+
+
+ </div>
+
+</div>
+  
+</main>
+
+<footer class="footer">
+
+  <pre>&copy; 2023 Wizards academy    Wizardsacademy@gmail.com.</pre>
+  <div class="icons"> 
+  <a href="#"><i class="fa fa-facebook-official"></i></a>
+  <a href="#"><i class="fa fa-twitter"></i></a>
+  <a href="#"><i class="fa fa-instagram"></i></a>
+  <a href="#"><i class="fa fa-google"></i></a>
+  </div>
+ 
+</footer>
+
+</body>
+
+</html>
+

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Wizards Academy - Parents dashboard</title>
+<link rel="stylesheet" href="unifiedStyle.css">
+<script src="theme.js"> </script>
+<style>
+
+.main{
+  background-image: linear-gradient(360deg, hsla(196, 70%, 75%, 1) 0%, hsla(0, 0%, 97%, 1) 48%);
+  padding-top: 1.5vw;
+  padding-left: 3vw;
+  padding-bottom: 4vw;
+
+  }
+
+
+  body.dark-mode .main{
+ background-image: linear-gradient(360deg, hsla(217, 65%, 32%, 1) 0%, hsla(219, 65%, 14%, 1) 48%);
+ color: #f7f7f7;
+    }
+  
+.Parents {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+.Parents h2 {
+  margin-bottom: 1rem; 
+}
+
+
+.button {
+  position: relative;
+  overflow: hidden;
+  height: 3rem;
+  border-radius: 1.65vw;
+  background: #F7F7F7;
+  background-size: 100%;
+  color: #fff;
+  border: none;
+  margin-top: 0.8vw;
+  text-align:center;
+}
+
+.button:hover::before {
+  transform: scaleX(1);
+}
+
+.button-content {
+  position: relative;
+  z-index: 1;
+}
+.button a {
+	text-decoration: none;
+}
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  width: 100%;
+  height: inherit;
+  border-radius: inherit;
+  background: #DEEFF5;
+  transition: all 0.475s;
+}
+
+.button a:visited{
+  color: black;
+}
+.button a:link{
+  color: #93D4EC;
+}
+.button a:hover{
+  color: #fff;
+}
+
+.button {
+	clear: left;
+	list-style-type: none;
+	text-decoration: none;
+    width: 24vw;
+    height: 6vw;
+	overflow: hidden;
+    border-radius: 1.65vw;
+	padding-top: 2vw;
+    box-shadow: 0 0.396vw 1.979vw rgba(1 1 1 / 15%);
+	color: black;
+	background-color: #F7F7F7;
+    margin: 2.5vw 1.6vw;
+	display: inline-block;
+	font-size: 1.4vw;
+	font-family: 'Playpen Sans', cursive;
+	margin-left:5vw;
+}
+
+.parents-item img
+{ 
+   width: 14.7vw;
+   height: 14.7vw;
+   padding-bottom:1vw;
+   align-items:center;
+   }
+.parents-item p {
+
+  align-items:center;
+  padding: 2vw 1vw 0.4vw ; 
+
+}
+
+.parents-item{
+	list-style-type: none;
+	text-decoration: none;
+	align-items:center;
+    width: 26.4vw;
+    height: 30vw;
+	overflow: hidden;
+    border-radius: 1.65vw;
+    padding: 4vw 1vw 0.4vw 5.7vw; 
+    box-shadow: 0 0.396vw 1.979vw rgba(1 1 1 / 15%);
+	color: black;
+	background-image:  radial-gradient(circle, hsla(179, 100%, 89%, 1) 0%, hsla(180, 100%, 97%, 1) 78%);
+    margin: 1.5vw;
+	display: inline-block;
+	font-size: 1.4vw;
+	font-weight: bold;
+	font-family: 'Playpen Sans', cursive;
+
+ 
+}
+
+.pagination {
+  display: inline-block;
+  justify-content: center;
+   padding-left:35vw;
+  font-family: 'Playpen Sans', cursive;
+
+}
+
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 3vw 1.2vw 0.1vw;
+  text-decoration: none;
+}
+
+body.dark-mode .button{
+ background-color: #131B29;
+    }
+body.dark-mode .button-element{
+ color: #f7f7f7;
+}
+body.dark-mode .button {
+  background-color: #131B29;
+}
+
+body.dark-mode .button:hover::before {
+  background: #3E6EA8; 
+}
+
+body.dark-mode .parents-item{
+ background-image: radial-gradient(circle, hsla(219, 65%, 14%, 1) 0%, hsla(206, 70%, 30%, 1) 78%);
+ color: #f7f7f7;
+    
+}
+
+body.dark-mode .pagination-item{
+ color: #f7f7f7;
+
+}
+</style>
+
+
+</head>
+
+<header>
+
+<nav class= "navbar">
+
+<div class="logo"> 
+<a href="index.html" class="image-element" ><img src="images/wizardslogo.png" alt="logo of Wizards academy website" >Wizards Academy</a>
+</div>
+<ul class= "navLinks">
+<li><a href= "index.html" accesskey="h" class="inner-element" >Home</a></li>
+<li><a href= "Parents.html" accesskey="p" class="inner-element">Parents</a></li>
+<li><a href= "Administrator.html" accesskey="a" class="inner-element">Administrator</a></li>
+<li><a href= "Tutors.html" accesskey="t" class="inner-element">Tutors </a></li>
+<li><a href= "Courses.html" accesskey="c" class="inner-element">Courses</a></li>
+</ul>
+</nav>
+
+<div class="Headerbackground">
+<h1>Parents </h1>
+<hr class="header-line">
+<ul class="breadcrumb">
+<li class="breadcrumb-item"> <a href="index.html" class="breadcrumb-link" > Home     </a></li>
+<li class="breadcrumb-item" > Parents </li>
+</ul>
+</div>
+
+</header>
+<body>
+<main  class="main">
+<br>
+
+<section class="Parents">
+<h2> My Kids</h2>
+
+<ol class="parents-list" id="kids">
+
+<li class="parents-item"> 
+<div class="image"><img src="images/child1.png" alt="Faris M. Alhussain" ></div>
+<p>Faris M. Alhussain</p>
+</li>
+
+<li class="parents-item"> 
+<div class="image"><img src="images/child2.png" alt="Mona M. Alhussain" ></div>
+<p>Mona M. Alhussain</p>
+</li>
+
+<li class="parents-item"> 
+<div class="image"><img src="images/child3.png" alt="Zaid M. Alhussain" ></div>
+<p>Zaid M. Alhussain</p>
+</li>
+
+</ol>
+
+
+</section>
+
+<div class="pagination">
+  <a href="#" class="pagination-item">&laquo;</a>
+  <a href="#" class="pagination-item">1</a>
+  <a href="#" class="pagination-item">2</a>
+  <a href="#" class="pagination-item">3</a>
+  <a href="#" class="pagination-item">4</a>
+  <a href="#" class="pagination-item">5</a>
+  <a href="#" class="pagination-item">6</a>
+  <a href="#" class="pagination-item">&raquo;</a>
+  </div>
+<div class="Parents-pages">
+
+<div class="pages-list">
+
+<div class="button">
+<span class="button-content"><a href="Register.html" class="button-element">Register a new kid</a></span>
+</div>
+
+<div class="button">
+ <span class="button-content"><a href="Enroll.html" class="button-element">Enroll in a course</a></span>
+</div>
+
+<div class="button">
+<span class="button-content"><a href="Evaluate.html" class="button-element">Evaluate courses</a></span>
+</div>
+
+</div>
+
+</div> 
+
+
+</div>
+
+</main>
+
+<footer class="footer">
+
+  <pre>&copy; 2023 Wizards Academy    Wizardsacademy@gmail.com.</pre>
+  <div class="icons"> 
+  <a href="#"><i class="fa fa-facebook-official"></i></a>
+  <a href="#"><i class="fa fa-twitter"></i></a>
+  <a href="#"><i class="fa fa-instagram"></i></a>
+  <a href="#"><i class="fa fa-google"></i></a>
+  </div>
+ 
+</footer>
+
+<script>
+  function checkLocalStorage() {
+      var childrenNames = localStorage.getItem('newChildRecord');
+      
+      if (!childrenNames) {
+        var defaultNames = ['Faris M. Alhussain', 'Mona M. Alhussain']; 
+        localStorage.setItem('childrenNames', JSON.stringify(defaultNames));
+        displayChildrenNames(defaultNames);
+      } else {
+        var names = JSON.parse(childrenNames);
+        displayChildrenNames(names);
+      }
+	 
+    }checkLocalStorage();
+     
+    function displayChildrenNames(names) {
+      var parentsListItems = document.querySelectorAll('.parents-list .parents-item');
+      
+      // Set names for the first two children explicitly
+      var nameElements = document.querySelectorAll('.parents-list .parents-item p');
+      nameElements[0].textContent = names[0];
+      nameElements[1].textContent = names[1];
+      
+      for (var i = 2; i < parentsListItems.length; i++) {
+        parentsListItems[i].style.display = 'none';
+      }
+    }
+    function populateKidsDropdown() {
+  var kidsDropdown = document.getElementById('kids');
+  var kids = JSON.parse(localStorage.getItem('ChildRecords'));
+
+  kids?.forEach(function (kid) {
+    var listItem = document.createElement('li');
+    var imageElement = document.createElement('div');
+    var nameElement = document.createElement('p');
+
+    imageElement.classList.add('image');
+    imageElement.innerHTML = '<img src="' + kid.photoUrl + '" alt="' + kid.Name + '">';  
+    nameElement.textContent = kid.Name;
+
+    listItem.classList.add('parents-item');
+    listItem.appendChild(imageElement);
+    listItem.appendChild(nameElement);
+
+    kidsDropdown.appendChild(listItem);
+  });
+}
+
+// Call the checkLocalStorage function when the page loads
+
+populateKidsDropdown();
+  </script>
+  
+  
+ 
+
+</body>
+
+</html>

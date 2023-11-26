@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<title>Wizards Academy - Register a new kid</title>
+<link rel="stylesheet" href="unifiedStyle.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<script src="theme.js"> </script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif&family=Playpen+Sans:wght@400;700&family=Young+Serif&display=swap');
+  
+.main{ 
+    background-image:linear-gradient(360deg, hsla(196, 70%, 75%, 1) 0%, hsla(0, 0%, 97%, 1) 48%);
+	padding-bottom: 4vw;
+
+}
+body.dark-mode .main{
+	background-image: linear-gradient(360deg, hsla(217, 65%, 32%, 1) 0%, hsla(219, 65%, 14%, 1) 48%);
+	color: #f7f7f7;
+    }
+
+
+main p { 
+	padding: 2vw 14vw 4vw 4.5vw;
+	font-size: 1.4vw;
+}
+
+.Register-form{
+    box-shadow: 0 0.396vw 1.979vw rgba(1 1 1 / 15%);
+	border-radius: 1.65vw;
+    width: 50vw;
+    height: auto;
+	margin-left:5vw;
+	padding-left:1.2vw;
+	background-color: #fff;
+    font-family: 'Playpen Sans', cursive;
+}
+
+body.dark-mode .Register-form{
+	background-color: #131B29;
+    }
+
+.Register-form h2{ 
+	padding-top: 3vw;
+	padding-bottom: 2vw;
+    padding-left: 1.2vw;
+	font-size: 1.7vw;
+}
+
+.centered-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ button{
+	height: 3vw;
+	width: 9vw;
+	font-size: 1.3vw;
+	font-weight: bold;
+	margin-top: 3vw;
+	margin-top: 2vw;
+	margin-bottom: 2vw;
+}
+
+label{ 
+	font-size: 1.3vw;
+}
+
+.select{
+    width: 15vw;
+    height: 2vw;
+    background: var(--arrow-icon) no-repeat right 0.8em center / 1.4em,
+    linear-gradient(to left, var(--arrow-bg) 3em, var(--select-bg) 3em);
+    border-radius: 0.25em;
+    cursor: pointer;
+}
+
+body.dark-mode .select{
+	    color: #f7f7f7;
+}
+
+option {
+    color: black;
+    background-color: var(--option-bg);
+}
+
+.input{
+    padding-left: 1.4vw;
+}
+
+
+
+	
+</style>
+<script>
+
+var form = document.getElementById("registerForm");
+var submitButton = document.querySelector('input[type="submit"]');
+submitButton.addEventListener("submit", function(event) {
+
+
+  event.preventDefault();
+  if (!validateForm()) {
+    return;
+  }
+  form.submit();
+});
+
+
+function validateForm() {
+  var firstName = document.getElementById("fname").value;
+  var lastName = document.getElementById("lname").value;
+  var photoInput = document.querySelector('input[type="file"]');
+  var dob = document.getElementById("dob").value;
+  var gender = document.getElementsByName("gender")[0].value;
+  var phone = document.getElementById("phone").value;
+  var email = document.querySelector('input[type="email"]').value;
+
+  if (firstName === "") {
+    alert("Please fill in the First name field");
+    return false;
+  }
+
+  if (lastName === "") {
+    alert("Please fill in the Last name field");
+    return false;
+  }
+
+  // Check if a photo is selected
+  if (photoInput.files.length === 0) {
+    alert("Please select a photo.");
+    return false;
+  }
+
+  // Get the selected photo file
+  var photoFile = photoInput.files[0];
+
+  if (dob === "") {
+    alert("Please fill in the Date of Birth field");
+    return false;
+  }
+
+  if (gender === "") {
+    alert("Please fill in the Gender field");
+    return false;
+  }
+
+  if (phone === "") {
+    alert("Please fill in the Phone field");
+    return false;
+  }
+
+  if (email === "") {
+    alert("Please fill in the Email field");
+    return false;
+  }
+
+  if (phone.length !== 10) {
+    alert("Phone number should have exactly 10 digits.");
+    return false;
+  }
+
+    var dob1 = new Date(dob);
+    var currentDate = new Date();
+    var minimumDOB = new Date();
+    minimumDOB.setFullYear(currentDate.getFullYear() - 6);
+
+    if (!dob || isNaN(dob1) || dob1 > currentDate || dob1 > minimumDOB) {
+      alert("Children younger than 6 years old are not accepted");
+      return false;
+    }
+
+  if (!isNaN(parseInt(firstName.charAt(0), 10))) {
+    alert("First name cannot start with a number.");
+    return false;
+  }
+
+  if (!isNaN(parseInt(lastName.charAt(0), 10))) {
+    alert("Last name cannot start with a number.");
+    return false;
+  }
+
+
+// local storage
+  localStorage.setItem("KidsFirstName", firstName);
+  localStorage.setItem("KidsLastName", lastName);
+
+
+//printing
+    var storedFirstName = localStorage.getItem("KidsFirstName");
+    var storedLastName = localStorage.getItem("KidsLastName");
+
+var childRecords = JSON.parse(localStorage.getItem("ChildRecords")) || [];
+var newChildRecord = {
+  Name: firstName +' '+ lastName
+};
+childRecords.push(newChildRecord);
+localStorage.setItem("ChildRecords", JSON.stringify(childRecords));
+
+    var childInfo = "Child's Name: " + storedFirstName + " " + storedLastName + "<br>";
+    childInfo += "DOB: " + dob + "<br>";
+    childInfo += "Gender: " + gender + "<br>";
+    childInfo += "Phone: " + phone + "<br>";
+    childInfo += "Email: " + email + "<br>";
+
+var printWindow = window.open("", "Print");
+printWindow.document.open();
+printWindow.document.write("<html><head><title>Child Information</title></head><body>");
+printWindow.document.write("<div style='border: 1px solid black; padding: 10px;'>");
+var photoUrl = URL.createObjectURL(photoFile);
+var photoImage = new Image();
+photoImage.src = photoUrl;
+photoImage.onload = function() {
+  printWindow.document.write("<img src='" + photoUrl + "' alt='photo of child' style='max-width: 200px; max-height: 200px;'><br>");
+  printWindow.document.write(childInfo);
+  printWindow.document.write("</div>");
+  printWindow.document.write("</body></html>");
+  printWindow.document.close();
+
+  printWindow.print();
+};
+  form.submit();
+}
+ </script>
+</head>
+
+<body>
+
+
+<header>
+
+<nav class= "navbar">
+
+<div class="logo"> 
+<a href="index.html" class="image-element" ><img src="images/wizardslogo.png" alt="logo of Wizards academy website" >Wizards Academy</a>
+</div>
+<ul class= "navLinks">
+<li><a href= "index.html" accesskey="h" class="inner-element" >Home</a></li>
+<li><a href= "Parents.html" accesskey="p" class="inner-element">Parents</a></li>
+<li><a href= "Administrator.html" accesskey="a" class="inner-element">Administrator</a></li>
+<li><a href= "Tutors.html" accesskey="t" class="inner-element">Tutors </a></li>
+<li><a href= "Courses.html" accesskey="c" class="inner-element">Courses</a></li>
+</ul>
+</nav>
+
+<div class="Headerbackground">
+<h1>Register a new kid</h1>
+<hr>
+<ul class="breadcrumb">
+         <li class="breadcrumb-item"> <a href="index.html" class="breadcrumb-link" > Home     </a></li>
+         <li class="breadcrumb-item"> <a href="Parents.html" class="breadcrumb-link" > Parents </a></li>
+         <li class="breadcrumb-item">  Register a new kid </li>
+</ul>
+</div>
+</header>
+
+
+<main class="main">
+  <p>We are so thrilled that you have selected Wizards Academy for your child's education. By enrolling them with us, you are providing them with the chance to acquire crucial abilities that will equip them for life in the digital age. To secure your child's seat in our forthcoming coding sessions, register today! Don't pass up this empowering opportunity!</p>
+   <form class="Register-form" id="registerForm" onsubmit="return validateForm()">
+    <div class="column">
+    
+        <h2>Student name:</h2>
+        <label for="fname" class="input">First name:</label>
+        <input type="text" id="fname" name="fname" placeholder="First"><br><br>
+        <label for="lname" class="input">Last name:</label>
+        <input type="text" id="lname" name="lname" placeholder="Last"><br><br>
+
+        <h2>Photo of child:</h2>
+        <input type="file" class="input" name="photo">
+
+        <h2>Date of birth:</h2>
+        <input type="date" class="input" name="dob" id="dob">
+     
+    </div>
+
+
+    <div class="column">
+        <h2>Gender:</h2>
+    <select name="gender" class="select">
+  <option value="">Select</option>
+  <option value="Female">Female</option>
+  <option value="Male">Male</option>
+</select>
+
+        <h2>Contact info</h2>
+        <h3>Phone number:</h3>
+        <input type="tel" class="input" name="phone" id="phone" placeholder="012-345-6789" maxlength="10" >
+		<br><br>
+
+        <h3>E-mail:</h3>
+        <input type="email" placeholder="example@gmail.com" class="input" ><br><br>
+    </div>
+
+    <div class="centered-button"><input type="submit" value="Submit"></div>
+
+	
+  </form>
+</main>
+
+<footer class="footer">
+
+  <pre>&copy; 2023 Wizards Academy    Wizardsacademy@gmail.com.</pre>
+  <div class="icons"> 
+  <a href="#"><i class="fa fa-facebook-official"></i></a>
+  <a href="#"><i class="fa fa-twitter"></i></a>
+  <a href="#"><i class="fa fa-instagram"></i></a>
+  <a href="#"><i class="fa fa-google"></i></a>
+  </div>
+ 
+</footer>
+
+</body>
+</html>
+
